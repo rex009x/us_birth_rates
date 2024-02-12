@@ -2,7 +2,7 @@
 # Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
 # Author: Aaron Xiaozhou Liu, Jimmy Luc, Maroosh Gillani
 # Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: aaronxiaozhou.liu@mail.utoronto.ca, jimmy.luc@mail.utoronto.ca, maroosh.gillani@mail.utoronto.ca
+# Contact: maroosh.gillani@mail.utoronto.ca, aaronxiaozhou.liu@mail.utoronto.ca, jimmy.luc@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: [...UPDATE THIS...]
 # Any other information needed? [...UPDATE THIS...]
