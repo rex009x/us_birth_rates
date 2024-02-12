@@ -1,6 +1,6 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "A Deeper Analysis into the Trends and Factors of the US's Declining Birth Rates"
+#subtitle: "My subtitle if needed"
 author: 
   - Maroosh Gillani
   - Aaron Liu
@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rates/tree/master/data . A replication of various aspects in this paper are available at: LINK ."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "Over the last couple of years, the American population has been witnessing a steady decline in their birth rates, as suggested by [@citeOriginalReplication]'s data from the American Economic Association. Through the analysis of multiple different factors, such as age and education, we notice a continual decline in birth rate starting from the year 2007. We explore how different social, cultural, and economic effects play a part in this worrying trend. This report sheds light on how the societal trends in the recent years have affected the American citizens in the last few decades, and how these patterns have played a part in this downward trend as people adapt to them."
 format: pdf
 toc: true
 number-sections: true
@@ -55,6 +55,7 @@ nchs_cohort_data <-
 
 
 # Introduction
+
 
 # CHANGE THIS
 
