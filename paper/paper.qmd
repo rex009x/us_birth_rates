@@ -21,9 +21,18 @@ library(dplyr)
 library(ggplot2)
 library(here)
 
-# acquire fig_1_data from gig_1.csv
+# acquire fig 1 data from fig_1.csv
 fig_1_data <- 
   read.csv(file=here("data/fig_1.csv"))
+
+# acquire fig 2 a data from figs_2a_2b.csv
+fig_2a_data <-
+  read.csv((file=here("data/figs_2a_2b.csv")))
+
+fig_2a_data <- fig_2a_data %>% select(year, brate_1519, brate_2024, brate_2529, brate_3034, brate_3539, brate_4044)
+
+fig_2a_data_long <- fig_2a_data %>%
+  pivot_longer(cols = -year, names_to = "Age_Group", values_to = "Birth_Rate")
 ```
 
 
@@ -44,6 +53,26 @@ fig_1_data %>% ggplot(aes(x = year, y = brate_all)) +
   theme_classic()
 ```
 
+```{r graph2, fig.cap="Trends in Birth Rates by Population Subgroup", echo=FALSE}
+
+#| label: fig-2
+
+# replicate figure 2a from the original paper
+fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
+  geom_line(size = 1) +
+  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Age Group", caption = "Five-year age group") +
+  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5)) +
+  geom_text(aes(x = 1985, y = 120), label = "Age 25-29", color = "black") +
+  geom_text(aes(x = 1985, y = 105), label = "Age 20-24", color = "black") +
+  geom_text(aes(x = 1985, y = 80), label = "Age 30-34", color = "black") +
+  geom_text(aes(x = 1985, y = 58), label = "Age 15-19", color = "black") +
+  geom_text(aes(x = 1985, y = 33), label = "Age 35-39", color = "black") +
+  geom_text(aes(x = 1985, y = 10), label = "Age 40-44", color = "black") +
+  theme_classic() +
+  theme(legend.position = "none")
+
+```
 
 # References
 
