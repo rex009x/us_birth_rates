@@ -92,7 +92,7 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
 # replicate figure 2d from the original paper
 fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Level)) +
   geom_line(size = 1) +
-  labs(x = "Year", y = "", color = "Education Level", caption = "Mother’s level of education (ages 20–44)") +
+  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Education Level", caption = "Mother’s level of education (ages 20–44)") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
   geom_text(aes(x = 1995, y = 105), label = "No high school degree", color = "black") +
