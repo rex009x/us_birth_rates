@@ -10,11 +10,13 @@ date: today
 date-format: long
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
 format: pdf
+toc: true
 number-sections: true
 bibliography: references.bib
 ---
 ```{r, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 # workplace setup
+
 
 library(tidyverse)
 library(dplyr)
@@ -57,6 +59,9 @@ nchs_cohort_data <-
 # CHANGE THIS
 
 ```{r graph1, fig.cap="Trend in US Birth Rates from 1980 - 2020", echo=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
 
 #| label: fig-1
 
@@ -70,7 +75,9 @@ fig_1_data %>% ggplot(aes(x = year, y = brate_all)) +
 ```
 
 ```{r graph2, fig.cap="Trends in Birth Rates by Population Subgroup", echo=FALSE}
-
+#| echo: false
+#| message: false
+#| warning: false
 #| label: fig-2
 
 # replicate figure 2a from the original paper
@@ -106,7 +113,9 @@ fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Leve
 ```
 
 ```{r graph3, fig.cap="Children Ever Born by Mother’s Age and Birth Cohort", echo=FALSE}
-
+#| echo: false
+#| message: false
+#| warning: false
 #| label: fig-3
 
 
