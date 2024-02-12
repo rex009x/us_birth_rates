@@ -20,6 +20,7 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 library(here)
+library(haven)
 
 # acquire fig 1 data from fig_1.csv
 fig_1_data <- 
@@ -44,6 +45,10 @@ fig_2d_data <- na.omit(fig_2d_data)
 
 fig_2d_data_long <- fig_2d_data %>%
   pivot_longer(cols = -year, names_to = "Education_Level", values_to = "Birth_Rate")
+
+# acquire fig 5 data from nchs_cohort_analysis.dta
+nchs_cohort_data <- 
+  read_dta(here("data/nchs_cohort_analysis.dta"))
 ```
 
 
@@ -100,6 +105,12 @@ fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Leve
   theme(legend.position = "none")
 ```
 
+```{r graph3, fig.cap="Children Ever Born by Mother’s Age and Birth Cohort", echo=FALSE}
+
+#| label: fig-3
+
+
+```
 # References
 
 
