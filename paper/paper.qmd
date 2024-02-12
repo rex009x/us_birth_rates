@@ -33,6 +33,17 @@ fig_2a_data <- fig_2a_data %>% select(year, brate_1519, brate_2024, brate_2529, 
 
 fig_2a_data_long <- fig_2a_data %>%
   pivot_longer(cols = -year, names_to = "Age_Group", values_to = "Birth_Rate")
+
+# acquire fig 2 d data from figs_1_2_3.csv
+fig_2d_data <-
+  read.csv((file=here("data/figs_1_2_3.csv")))
+
+fig_2d_data <- fig_2d_data %>% select(year, brate_hsdropout,	brate_hsgrad,	brate_somecol,	brate_colgrad)
+
+fig_2d_data <- na.omit(fig_2d_data)
+
+fig_2d_data_long <- fig_2d_data %>%
+  pivot_longer(cols = -year, names_to = "Education_Level", values_to = "Birth_Rate")
 ```
 
 
@@ -72,6 +83,21 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
   theme_classic() +
   theme(legend.position = "none")
 
+
+# replicate figure 2d from the original paper
+fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Level)) +
+  geom_line(size = 1) +
+  labs(x = "Year", y = "", color = "Education Level", caption = "Mother’s level of education (ages 20–44)") +
+  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
+  scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
+  geom_text(aes(x = 1995, y = 105), label = "No high school degree", color = "black") +
+  geom_text(aes(x = 1995, y = 75), label = "College graduate
+", color = "#d44215") +
+  theme_classic() +
+  geom_text(aes(x = 1995, y = 65), label = "High school graduate", color = "#0cc4be") +
+  geom_text(aes(x = 1995, y = 45), label = "Some college", color = "black") +
+  theme_classic() +
+  theme(legend.position = "none")
 ```
 
 # References
