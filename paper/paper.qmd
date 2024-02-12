@@ -2,9 +2,9 @@
 title: "My title"
 subtitle: "My subtitle if needed"
 author: 
+  - Maroosh Gillani
   - Aaron Liu
   - Jimmy Luc
-  - Maroosh Gillani
 thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rates/tree/master/data . A replication of various aspects in this paper are available at: LINK ."
 date: today
 date-format: long
@@ -37,8 +37,11 @@ fig_1_data <-
 
 # replicate figure 1 from the original paper
 fig_1_data %>% ggplot(aes(x = year, y = brate_all)) +
-  geom_line(color = "blue") +
-  labs(x = "Year", y = "Births per 1,000 women age 15–44")
+  geom_line(color = "#378bd4", size = 1) +
+  labs(x = "Year", y = "Births per 1,000 women age 15–44") +
+  scale_y_continuous(limits = c(50,80), breaks = seq(50, 80, by = 5)) +
+  scale_x_continuous(limits = c(1980,2020), breaks = seq(1980, 2020, by = 5)) +
+  theme_classic()
 ```
 
 
