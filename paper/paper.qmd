@@ -1,11 +1,8 @@
 ---
 title: "A Deeper Analysis into the Trends and Factors of the US's Declining Birth Rates"
 #subtitle: "My subtitle if needed"
-author: 
-  - Maroosh Gillani
-  - Aaron Liu
-  - Jimmy Luc
-thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rates/tree/master/data . A replication of various aspects in this paper are available at: LINK ."
+author: Maroosh Gillani, Aaron Liu & Jimmy Luc
+thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rates/tree/master/data. Selected aspects of the original paper that underpins this paper were reproduced and a record of this is available at: https://www.socialsciencereproduction.org/reproductions/bfe97499-4c05-466f-8cb5-fbedc27a83a1/index "
 date: today
 date-format: long
 abstract: "Over the last couple of years, the American population has been witnessing a steady decline in their birth rates, as suggested by [@citeOriginalReplication]'s data from the American Economic Association. Through the analysis of multiple different factors, such as age and education, we notice a continual decline in birth rate starting from the year 2007. We explore how different social, cultural, and economic effects play a part in this worrying trend. This report sheds light on how the societal trends in the recent years have affected the American citizens in the last few decades, and how these patterns have played a part in this downward trend as people adapt to them."
