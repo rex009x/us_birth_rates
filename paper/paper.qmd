@@ -84,6 +84,8 @@ Throughout the rest of this paper, we will be delving into the statistics with r
 
 ## Data source
 
+The datasets for this paper were acquired through the American Economic Association's paper "The Puzzle of Falling US Birth Rates since the Great Recession" [@citeOriginalReplication], with the aid of data available from Centers for Disease Control and Prevention (CDC) Natality data [@citeCDCNCHS] and CDC SEER's U.S. Population Data [@citeCDCSeer].
+
 
 ```{r graph1, fig.cap="Trend in US Birth Rates from 1980 - 2020", echo=FALSE}
 #| echo: false
