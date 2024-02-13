@@ -5,6 +5,7 @@
 # Contact: maroosh.gillani@mail.utoronto.ca, aaronxiaozhou.liu@mail.utoronto.ca, jimmy.luc@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: Must have data downloaded
+# Additional Information: these tests are applicable to the simulated data in 00-simulate_data.R
 
 
 #### Workspace setup ####
