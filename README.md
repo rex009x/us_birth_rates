@@ -1,4 +1,4 @@
-# US Declining Birth Rates: A Deeper Analysis
+# From Trends to Truth: A Comprehensive Analysis Unveiling the Truth Behind Declining US Birth Rates.
 
 ## Overview
 
@@ -20,4 +20,4 @@ Data is acquired from the replication package available from the [AEA article](h
 
 ## Statement on LLM usage
 
-Aspects of the code were written with the help of the auto-complete tool, Codriver. The abstract and introduction were written with the help of ChatGPT and the entire chat history is available in other/llms/usage.txt.
+ChatGPT was used to aid in the process of reproducing the target figures. Given code snippets and points of difficulty, ChatGPT prompted troubleshooting and modification instructions. Its usage and chat history is available in `other/llm/usage.txt`.
