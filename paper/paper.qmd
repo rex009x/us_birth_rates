@@ -53,11 +53,19 @@ nchs_cohort_data <-
   read_dta(here("data/nchs_cohort_analysis.dta"))
 ```
 
-
+\newpage
 # Introduction
 
+The United States has been experiencing heavy fluctuations in birth rates for nearly half a century with constant decline since 2007. The birth rate of a country is representative of its socioeconomic state, political state, and future prosperity. Furthermore, it determines the decision-making and distribution of government resources, education, health care services, and urban planning. This alarming issue leaves many seeking an explanation as to what exactly is causing this phenomenon. While people may point fingers at the ever changing societal norm, evolving ideology on family structure, or to no fault but the government, this paper aims to expose the possible explanations to the plummeting birth rate in the United States of America.
 
-# CHANGE THIS
+The nations birth rate has fallen significantly since 2007, dropping but about 23% by 2022, measured by number of births per 1000 women [@citeAxios] and that birth rates tend to fall as based on the economy. 2007 marks the start of the most severe economic crisis the world has ever faced, spanning the years 2007 until 2009. The events of this crisis has had long lasting damage on the economy, with unemployment doubling and the crash of the housing market [@citeFDR]. These poor economic conditions and the unusually slow recovery of the economy would play a large role in the decision to have children, as an unpredictable economic environment makes people feel less secure about raising a family, thus contributing to the recorded decline in birth rates. This is just one of various factors that we will be exploring in this paper to observe any trends and correlations between societal and economic shifts and the dwindling birth rate in the US.
+
+Throughout the rest of this paper, we will be delving into the statistics with regards to birth rates in the US and observe any trends we can find. In the data and results sections of this paper, we examine and analyze the information reported by the AEA by downloading and cleaning the data sets. After that, we will look into the results sections to look for trends and other insights that can be uncovered from our research, and finally discuss and summarize all of our findings in the conclusion.
+
+# Data
+
+## Data source
+
 
 ```{r graph1, fig.cap="Trend in US Birth Rates from 1980 - 2020", echo=FALSE}
 #| echo: false
