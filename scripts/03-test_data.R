@@ -22,7 +22,7 @@ fig_5_data_1 = read_dta(here("data/agecomp-seer.dta"))
 fig_5_data_2 = read_dta(here("data/nchs_cohort_analysis.dta"))
 
 #### Test data ####
-## test data types
+## test data types##
 # methods used: https://stackoverflow.com/a/29591221
 all(sapply(fig_1_data$year, is.numeric))
 all(sapply(fig_1_data$brate_all, is.numeric))
@@ -61,5 +61,43 @@ all(sapply(fig_5_data_2$cohort2, is.numeric))
 all(sapply(fig_5_data_2$numbirth, is.numeric))
 
 
-## test data values
-min(fig_1_data$year) == 1980 && max(fig_1_data$year) == 2020
+## test data values ##
+all(fig_1_data$year >= 1980 & fig_1_data$year <= 2020)
+all(fig_1_data$brate_all >= 0) # cannot have negative birth rate
+
+
+all(fig_2a_data$year >= 1980 & fig_2a_data$year <= 2020)
+all(fig_2a_data$brate_1519 >= 0) # cannot have negative birth rate
+all(fig_2a_data$brate_2024 >= 0)
+all(fig_2a_data$brate_2529 >= 0)
+all(fig_2a_data$brate_3034 >= 0)
+all(fig_2a_data$brate_3539 >= 0)
+all(fig_2a_data$brate_4044 >= 0)
+
+# data contains empty entries
+all(fig_2d_data$year >= 1980 & fig_2d_data$year <= 2020, na.rm = TRUE)
+all(fig_2d_data$brate_hsdropout >= 0, na.rm = TRUE) # cannot have negative birth rate
+all(fig_2d_data$brate_hsgrad >= 0, na.rm = TRUE)
+all(fig_2d_data$brate_somecol >= 0, na.rm = TRUE)
+all(fig_2d_data$brate_colgrad >= 0, na.rm = TRUE)
+
+
+all(fig_2f_data_1$year >= 1990 & fig_2f_data_1$year <= 2019)
+all(fig_2f_data_1$stname != '')
+all(fig_2f_data_1$numbirth_firstbirth >= 0) # cannot have negative number of births
+all(fig_2f_data_1$numbirth_secondbirth >= 0)
+all(fig_2f_data_1$numbirth_thirdbirth >= 0)
+all(fig_2f_data_1$numbirth_fourthbirth >= 0)
+all(fig_2f_data_1$pop1544 >= 0) # cannot have negative births
+
+
+all(fig_2f_data_2$year >= 1990 & fig_2f_data_2$year <= 2019)
+
+all(fig_5_data_1$year >= 1980 & fig_5_data_1$year <= 2019)
+all(fig_5_data_1$stname != '') # all entries have an associated US state
+all(fig_5_data_1$fem15 >= 0) # cannot have negative population
+all(fig_5_data_1$fem44 >= 0)
+
+all(fig_5_data_2$mage >= 15 & fig_5_data_2$mage <= 44)
+all(fig_5_data_2$cohort2 >= 1 & fig_5_data_2$cohort2 <= 6)
+all(fig_5_data_2$numbirth >= 0) # cannot have negative number of births
