@@ -88,7 +88,7 @@ fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Leve
 nchs_births_data <- read_dta(here("data/nchs_births_pop_1990_2019.dta"))
 seer_data <- read_dta(here("data/age_race_comp_seer.dta"))
 
-merged_data <- merge(nchs_data, seer_data, by = c("stname", "year"))
+merged_data <- merge(nchs_births_data, seer_data, by = c("stname", "year"))
 
 merged_data <- merged_data %>%
   mutate(
@@ -108,10 +108,10 @@ merged_data_long %>% ggplot(aes(x = year, y = round(Birth_Rate, digits = 1), col
   labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Parity", caption = "Parity (ages 15-44)") +
   scale_y_continuous(limits = c(0, 40), breaks = seq(0, 40, by = 10)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
-  geom_text(aes(x = 1995, y = 30), label = "First birth", color = "black") +
-  geom_text(aes(x = 1995, y = 25), label = "Second birth", color = "black") +
-  geom_text(aes(x = 1995, y = 15), label = "Third Birth", color = "black") +
-  geom_text(aes(x = 1995, y = 10), label = "Fourth+ birth", color = "black") +
+  geom_text(aes(x = 1995, y = 28), label = "First birth", color = "black") +
+  geom_text(aes(x = 1995, y = 23), label = "Second birth", color = "black") +
+  geom_text(aes(x = 1995, y = 12.5), label = "Third Birth", color = "black") +
+  geom_text(aes(x = 1995, y = 8.5), label = "Fourth+ birth", color = "black") +
   theme_classic() +
   theme(legend.position = "none")
 

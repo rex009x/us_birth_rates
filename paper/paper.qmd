@@ -28,7 +28,7 @@ library(haven)
 fig_1_data <- 
   read.csv(file=here("data/fig_1.csv"))
 
-# acquire fig 2 a data from figs_2a_2b.csv
+# acquire fig 2a data from figs_2a_2b.csv
 fig_2a_data <-
   read.csv((file=here("data/figs_2a_2b.csv")))
 
@@ -37,7 +37,7 @@ fig_2a_data <- fig_2a_data %>% select(year, brate_1519, brate_2024, brate_2529, 
 fig_2a_data_long <- fig_2a_data %>%
   pivot_longer(cols = -year, names_to = "Age_Group", values_to = "Birth_Rate")
 
-# acquire fig 2 d data from figs_1_2_3.csv
+# acquire fig 2d data from figs_1_2_3.csv
 fig_2d_data <-
   read.csv((file=here("data/figs_1_2_3.csv")))
 
@@ -47,6 +47,24 @@ fig_2d_data <- na.omit(fig_2d_data)
 
 fig_2d_data_long <- fig_2d_data %>%
   pivot_longer(cols = -year, names_to = "Education_Level", values_to = "Birth_Rate")
+
+# acquire figure 2F data from NCHS Natality Microdata's nchs_births_pop_1990_2019.dta and SEER's age_race_comp_seer.dta
+nchs_births_data <- read_dta(here("data/nchs_births_pop_1990_2019.dta"))
+seer_data <- read_dta(here("data/age_race_comp_seer.dta"))
+
+merged_data <- merge(nchs_births_data, seer_data, by = c("stname", "year"))
+
+merged_data <- merged_data %>%
+  mutate(
+    brate_firstbirth = merged_data$numbirth_firstbirth / merged_data$pop1544 * 1000,
+    brate_secondbirth = merged_data$numbirth_secondbirth / merged_data$pop1544 * 1000,
+    brate_thirdbirth = merged_data$numbirth_thirdbirth / merged_data$pop1544 * 1000,
+    brate_fourthbirth = merged_data$numbirth_fourthbirth / merged_data$pop1544 * 1000
+  ) %>%
+  select(year, starts_with("brate_"))
+
+merged_data_long <- merged_data %>%
+  pivot_longer(cols = -year, names_to = "Parity", values_to = "Birth_Rate")
 
 # acquire fig 5 data from nchs_cohort_analysis.dta
 nchs_cohort_data <- 
@@ -117,6 +135,19 @@ fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Leve
   theme_classic() +
   geom_text(aes(x = 1995, y = 65), label = "High school graduate", color = "#0cc4be") +
   geom_text(aes(x = 1995, y = 45), label = "Some college", color = "black") +
+  theme_classic() +
+  theme(legend.position = "none")
+
+# replicate figure 2f from the original paper
+merged_data_long %>% ggplot(aes(x = year, y = round(Birth_Rate, digits = 1), color = Parity)) +
+  geom_line(size = 1, stat = "summary", fun = mean) +
+  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Parity", caption = "Parity (ages 15-44)") +
+  scale_y_continuous(limits = c(0, 40), breaks = seq(0, 40, by = 10)) +
+  scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
+  geom_text(aes(x = 1995, y = 28), label = "First birth", color = "black") +
+  geom_text(aes(x = 1995, y = 23), label = "Second birth", color = "black") +
+  geom_text(aes(x = 1995, y = 12.5), label = "Third Birth", color = "black") +
+  geom_text(aes(x = 1995, y = 8.5), label = "Fourth+ birth", color = "black") +
   theme_classic() +
   theme(legend.position = "none")
 ```
