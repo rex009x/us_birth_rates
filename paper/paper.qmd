@@ -9,7 +9,9 @@ thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rat
 date: today
 date-format: long
 abstract: "Over the last couple of years, the American population has been witnessing a steady decline in their birth rates, as suggested by [@citeOriginalReplication]'s data from the American Economic Association. Through the analysis of multiple different factors, such as age and education, we notice a continual decline in birth rate starting from the year 2007. We explore how different social, cultural, and economic effects play a part in this worrying trend. This report sheds light on how the societal trends in the recent years have affected the American citizens in the last few decades, and how these patterns have played a part in this downward trend as people adapt to them."
-format: pdf
+format:
+  pdf:
+    fig-pos: "H"
 toc: true
 number-sections: true
 bibliography: references.bib
@@ -125,7 +127,7 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5)) +
   geom_text(aes(x = 1985, y = 120), label = "Age 25-29", color = "black") +
-  geom_text(aes(x = 1985, y = 105), label = "Age 20-24", color = "black") +
+  geom_text(aes(x = 1985, y = 100), label = "Age 20-24", color = "black") +
   geom_text(aes(x = 1985, y = 80), label = "Age 30-34", color = "black") +
   geom_text(aes(x = 1985, y = 58), label = "Age 15-19", color = "black") +
   geom_text(aes(x = 1985, y = 33), label = "Age 35-39", color = "black") +
@@ -140,12 +142,11 @@ fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Leve
   labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Education Level", caption = "Mother's level of education (ages 20-44)") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
-  geom_text(aes(x = 1995, y = 105), label = "No high school degree", color = "black") +
-  geom_text(aes(x = 1995, y = 75), label = "College graduate
-", color = "#d44215") +
+  geom_text(aes(x = 1993, y = 110), label = "No high school degree", color = "black", hjust = 0) +
+  geom_text(aes(x = 1993, y = 82), label = "College graduate", color = "#f8766d", hjust = 0) +
   theme_classic() +
-  geom_text(aes(x = 1995, y = 65), label = "High school graduate", color = "#0cc4be") +
-  geom_text(aes(x = 1995, y = 45), label = "Some college", color = "black") +
+  geom_text(aes(x = 1993, y = 62), label = "High school graduate", color = "#00bfc4", hjust = 0) +
+  geom_text(aes(x = 1993, y = 45), label = "Some college", color = "black", hjust = 0) +
   theme_classic() +
   theme(legend.position = "none")
 
@@ -155,10 +156,10 @@ merged_data_long %>% ggplot(aes(x = year, y = round(Birth_Rate, digits = 1), col
   labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Parity", caption = "Parity (ages 15-44)") +
   scale_y_continuous(limits = c(0, 40), breaks = seq(0, 40, by = 10)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
-  geom_text(aes(x = 1995, y = 28), label = "First birth", color = "black") +
-  geom_text(aes(x = 1995, y = 23), label = "Second birth", color = "black") +
-  geom_text(aes(x = 1995, y = 12.5), label = "Third Birth", color = "black") +
-  geom_text(aes(x = 1995, y = 8.5), label = "Fourth+ birth", color = "black") +
+  geom_text(aes(x = 1993, y = 28), label = "First birth", color = "black", hjust = 0) +
+  geom_text(aes(x = 1993, y = 23), label = "Second birth", color = "black", hjust = 0) +
+  geom_text(aes(x = 1993, y = 12.5), label = "Third Birth", color = "black", hjust = 0) +
+  geom_text(aes(x = 1993, y = 8.5), label = "Fourth+ birth", color = "black", hjust = 0) +
   theme_classic() +
   theme(legend.position = "none")
 ```
