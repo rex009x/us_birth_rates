@@ -114,7 +114,7 @@ fig_1_data %>% ggplot(aes(x = year, y = brate_all)) +
   theme_classic()
 ```
 
-```{r graph2, fig.cap="Trends in Birth Rates by Population Subgroup", echo=FALSE}
+```{r graph2a, fig.cap="Trends in Birth Rates by Five-year Age Group", echo=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -123,7 +123,7 @@ fig_1_data %>% ggplot(aes(x = year, y = brate_all)) +
 # replicate figure 2a from the original paper
 fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
   geom_line(size = 1) +
-  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Age Group", caption = "Five-year age group") +
+  labs(x = "Year", y = "Births per 1,000 women in \n relevant population subgroup", color = "Age Group") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5)) +
   geom_text(aes(x = 1985, y = 120), label = "Age 25-29", color = "black") +
@@ -134,26 +134,29 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
   geom_text(aes(x = 1985, y = 10), label = "Age 40-44", color = "black") +
   theme_classic() +
   theme(legend.position = "none")
+```
 
-
+```{r graph2b, fig.cap="Trends in Birth Rates by Mother's Level of Education (ages 20-44)", echo=FALSE}
 # replicate figure 2d from the original paper
 fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Level)) +
   geom_line(size = 1) +
-  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Education Level", caption = "Mother's level of education (ages 20-44)") +
+  labs(x = "Year", y = "Births per 1,000 women in \n relevant population subgroup", color = "Education Level") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
-  geom_text(aes(x = 1993, y = 110), label = "No high school degree", color = "black", hjust = 0) +
+  geom_text(aes(x = 1993, y = 112), label = "No high school degree", color = "black", hjust = 0) +
   geom_text(aes(x = 1993, y = 82), label = "College graduate", color = "#f8766d", hjust = 0) +
   theme_classic() +
   geom_text(aes(x = 1993, y = 62), label = "High school graduate", color = "#00bfc4", hjust = 0) +
   geom_text(aes(x = 1993, y = 45), label = "Some college", color = "black", hjust = 0) +
   theme_classic() +
   theme(legend.position = "none")
+```
+```{r graph2c, fig.cap="Trends in Birth Rates by Parity (ages 15-44)", echo=FALSE}
 
 # replicate figure 2f from the original paper
 merged_data_long %>% ggplot(aes(x = year, y = round(Birth_Rate, digits = 1), color = Parity)) +
   geom_line(size = 1, stat = "summary", fun = mean) +
-  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Parity", caption = "Parity (ages 15-44)") +
+  labs(x = "Year", y = "Births per 1,000 women in \n relevant population subgroup", color = "Parity") +
   scale_y_continuous(limits = c(0, 40), breaks = seq(0, 40, by = 10)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
   geom_text(aes(x = 1993, y = 28), label = "First birth", color = "black", hjust = 0) +
