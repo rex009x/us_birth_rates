@@ -82,9 +82,18 @@ Throughout the rest of this paper, we will be delving into the statistics with r
 
 # Data
 
-## Data source
+## Data Source and Collection
 
-The datasets for this paper were acquired through the American Economic Association's paper "The Puzzle of Falling US Birth Rates since the Great Recession" [@citeOriginalReplication], with the aid of data available from Centers for Disease Control and Prevention (CDC) Natality data [@citeCDCNCHS] and CDC SEER's U.S. Population Data [@citeCDCSeer].
+The datasets for this paper were acquired through the American Economic Association's paper "The Puzzle of Falling US Birth Rates since the Great Recession" [@citeOriginalReplication], with the aid of data available from Centers for Disease Control and Prevention (CDC) Natality data [@citeCDCNCHS] and CDC SEER U.S. Population Data [@citeCDCSeer]. The data sources were accessed on February 12th, 2024 and acts as the basis of this paper. The data sources themselves were a collaborative effort from the U.S. Census Bureau, the National Cancer Institute, SEER Data, CDC, and the National Center for Disease Control and Prevention (NCHS). The U.S. census is legally mandated by the United States Constitution which occurs every 10 years. The data is largely comprised of `numeric` values representing years, birth rates by race and ethnicity, marital status, education, age, and birth parity, or `character` values representing US states.
+
+All data collection and analysis was done using statistical tools and data visualization program R [@citeR] and Rstudio IDE [@citeRStudio] to help streamline the workflow. The analysis was done using the R program and the following supporting packages `tidyverse` [@citeTidyverse], `haven` [@citeHaven], `ggplot2` [@citeGgplot2], `here` [@citeHere], `ggthemes` [@citeGgthemes], and `dplyr` [@citeDplyr]. We will provide more comprehensive details about the data cleaning, and analysis in the following subsections.
+
+## Variables of Interest
+Although the data contains an abundance of information, we are mainly concerned of US birth rates per year, the total female population, and various other factors including age, mother's level of education, and birth parity (number of children for a given women). As this paper focuses on birth rates in the US over the course of time, we have all the necessary and sufficient information required to proceed processing the data for our analysis.
+
+## Data Processing
+
+## Data Visualization
 
 
 ```{r graph1, fig.cap="Trend in US Birth Rates from 1980 - 2020", echo=FALSE}
@@ -97,7 +106,7 @@ The datasets for this paper were acquired through the American Economic Associat
 # replicate figure 1 from the original paper
 fig_1_data %>% ggplot(aes(x = year, y = brate_all)) +
   geom_line(color = "#378bd4", size = 1) +
-  labs(x = "Year", y = "Births per 1,000 women age 15–44") +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44") +
   scale_y_continuous(limits = c(50,80), breaks = seq(50, 80, by = 5)) +
   scale_x_continuous(limits = c(1980,2020), breaks = seq(1980, 2020, by = 5)) +
   theme_classic()
@@ -128,7 +137,7 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
 # replicate figure 2d from the original paper
 fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Level)) +
   geom_line(size = 1) +
-  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Education Level", caption = "Mother’s level of education (ages 20–44)") +
+  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup", color = "Education Level", caption = "Mother's level of education (ages 20-44)") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
   geom_text(aes(x = 1995, y = 105), label = "No high school degree", color = "black") +
@@ -154,7 +163,7 @@ merged_data_long %>% ggplot(aes(x = year, y = round(Birth_Rate, digits = 1), col
   theme(legend.position = "none")
 ```
 
-```{r graph3, fig.cap="Children Ever Born by Mother’s Age and Birth Cohort", echo=FALSE}
+```{r graph3, fig.cap="Children Ever Born by Mother's Age and Birth Cohort", echo=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
