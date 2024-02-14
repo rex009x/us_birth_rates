@@ -2,7 +2,7 @@
 title: "From Trends to Truth: A Comprehensive Analysis Revealing Contributing Factors Behind Declining US Birth Rates"
 #subtitle: "My subtitle if needed"
 author: Maroosh Gillani, Aaron Liu & Jimmy Luc
-thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rates/tree/master/data. Selected aspects of the original paper that underpins this paper were reproduced and a record of this is available at: https://www.socialsciencereproduction.org/reproductions/bfe97499-4c05-466f-8cb5-fbedc27a83a1/index "
+thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rates/tree/master/data. Selected aspects of the original paper that underpins this paper were reproduced and a record of this is available at: https://doi.org/10.48152/ssrp-nsc2-4v21 "
 date: today
 date-format: long
 abstract: "Over the last couple of years, the American population has been witnessing a steady decline in their birth rates, as suggested by the American Economic Association's article 'The Puzzle of Falling US Birth Rates since the Great Recession' by Kearney, Levine, and Pardue (2020). Through the analysis of multiple different factors, such as age and education, we notice a continual decline in birth rate starting from the year 2007. We discover how different social, cultural, and economic shifts play a part in this worrying trend. This paper demonstrates how socioeconomic trends in the recent years have affected Americans to shift their priorties, and how this change represented through data has played a key role in the irreversible downward trajectory of US birth rates."
