@@ -1,5 +1,5 @@
 ---
-title: "From Trends to Truth: A Comprehensive Analysis Revealing Contributing Factors Behind Declining US Birth Rates"
+title: "A Comprehensive Analysis Revealing Contributing Factors Behind Declining US Birth Rates"
 #subtitle: "My subtitle if needed"
 author: Maroosh Gillani, Aaron Liu & Jimmy Luc
 thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rates/tree/master/data. Selected aspects of the original paper that underpins this paper were reproduced and a record of this is available at: https://doi.org/10.48152/ssrp-nsc2-4v21 "
