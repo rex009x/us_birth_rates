@@ -289,5 +289,16 @@ nchs_cohort_data %>%
   theme_classic() + 
   theme(legend.background = element_blank(), legend.box.background = element_rect(), legend.position = c(0.85,0.4), axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+# Results
+# Discussion
+
+## Leave the World Behind: A Shift in Priorities and the Evolving Social Norms
+
+The most likely explanation that acts as the root cause for the decline in US births is the shift in priorities across cohorts of women [@citeEconomicPolicy]. While there are many who can speculate and point fingers at specific events that occurred pre- or post-2007 such as the "inevitable" financial crisis more commonly known as "The Great Recession". It is evident that there exists a relationship between the current state of the economy and fertility rate, in other words, fertility is procyclical [@citeSageJournals]. This alone would suffice as the reasoning for such drop in fertility but instead the shifting priorities of young adults adopting a new and modern take on life is the overarching explanation.
+
+The social norm defines the boundaries or limits of how you should live your life. Walk the line of the social norm and you should expect to live the most ideal life, or so they say. The recent generations are an example of societies attempt at keeping pace with technological progression and redefining a social norm while challenging the bigger question at hand: "What is the meaning of life?" Should everyone have a similar goal in life? Does there exist a single task in the bucket list that every human shares? These are questions that young adults have been asking while being raised in a constantly evolving social landscape. Concerning parenthood, when men and women are ask the question "How does ones life  change when you have children", the most common answer is that your life becomes restricted now that you have to take on a new responsibility as a parent or idea that you have to giving up your freedom [@citePopulationCouncil]. While this goal of this paper is not to convince to not have children, instead it aims to convey the perspective of young adults who have the choice of whether or not they wish to become parents of the next generation.
+
+DINK is an acronym for "dual income, no kids" and refers to couples who choose to not have children. While not being too unpopular of an ideology, is such decision considered selfish through the lens of the social norm? Nearly 48% of DINKs are spending the money that they are "saving" for not having any children towards travel. 33% say that they enjoy the financial freedom of not having children. With 32% of DINK couples stating that the cost of living today is too high to have children and 26% say they cannot financially support a child right now. A high 68% of DINK couples do not plan to ever have children and do not expect to regret such decision [@citeDINK]. With these statistics, can you really blame them? Regardless of whether or not these values become normalized into society, the declining birth rates in the US are a product of the shift in priorities for young adults.
+
 # References
 
