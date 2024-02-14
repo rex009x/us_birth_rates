@@ -1,11 +1,11 @@
 ---
-title: "A Deeper Analysis into the Trends and Factors of the US's Declining Birth Rates"
+title: "From Trends to Truth: A Comprehensive Analysis Revealing Contributing Factors Behind Declining US Birth Rates."
 #subtitle: "My subtitle if needed"
 author: Maroosh Gillani, Aaron Liu & Jimmy Luc
 thanks: "Code and data are available at: https://github.com/rex009x/us_birth_rates/tree/master/data. Selected aspects of the original paper that underpins this paper were reproduced and a record of this is available at: https://www.socialsciencereproduction.org/reproductions/bfe97499-4c05-466f-8cb5-fbedc27a83a1/index "
 date: today
 date-format: long
-abstract: "Over the last couple of years, the American population has been witnessing a steady decline in their birth rates, as suggested by [@citeOriginalReplication]'s data from the American Economic Association. Through the analysis of multiple different factors, such as age and education, we notice a continual decline in birth rate starting from the year 2007. We explore how different social, cultural, and economic effects play a part in this worrying trend. This report sheds light on how the societal trends in the recent years have affected the American citizens in the last few decades, and how these patterns have played a part in this downward trend as people adapt to them."
+abstract: "Over the last couple of years, the American population has been witnessing a steady decline in their birth rates, as suggested by the American Economic Association's article 'The Puzzle of Falling US Birth Rates since the Great Recession' by Kearney, Levine, and Pardue (2020). Through the analysis of multiple different factors, such as age and education, we notice a continual decline in birth rate starting from the year 2007. We discover how different social, cultural, and economic shifts play a part in this worrying trend. This paper demonstrates how socioeconomic trends in the recent years have affected Americans, and how these patterns represented through data have played a key role in the irreversible downward trajectory of US birth rates."
 format:
   pdf:
     fig-pos: "H"
@@ -15,8 +15,6 @@ bibliography: references.bib
 ---
 ```{r, include=FALSE, warning=FALSE, message=FALSE}
 # workplace setup
-
-
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
@@ -142,7 +140,7 @@ The United States has been experiencing heavy fluctuations in birth rates for ne
 
 The nations birth rate has fallen significantly since 2007, dropping but about 23% by 2022, measured by number of births per 1000 women [@citeAxios] and that birth rates tend to fall as based on the economy. 2007 marks the start of the most severe economic crisis the world has ever faced, spanning the years 2007 until 2009. The events of this crisis has had long lasting damage on the economy, with unemployment doubling and the crash of the housing market [@citeFDR]. These poor economic conditions and the unusually slow recovery of the economy would play a large role in the decision to have children, as an unpredictable economic environment makes people feel less secure about raising a family, thus contributing to the recorded decline in birth rates. This is just one of various factors that we will be exploring in this paper to observe any trends and correlations between societal and economic shifts and the dwindling birth rate in the US.
 
-Throughout the rest of this paper, we will be delving into the statistics with regards to birth rates in the US and observe any trends we can find. In the data and results sections of this paper, we examine and analyze the information reported by the AEA by downloading and cleaning the data sets. After that, we will look into the results sections to look for trends and other insights that can be uncovered from our research, and finally discuss and summarize all of our findings in the conclusion.
+Throughout the rest of this paper, we will be delving into the statistics with regards to birth rates in the US and observe any trends we can find. In the data and results sections of this paper, we examine, analyze, and reproduce the information reported by the authors by downloading and cleaning the data sets provided in the replication package. After that, we will look into the results sections to look for trends and other insights that can be uncovered from our research, and finally discuss and summarize all of our findings in the conclusion.
 
 # Data
 
@@ -187,12 +185,21 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
   labs(x = "Year", y = "Births per 1,000 women in \n relevant population subgroup", color = "Age Group") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5)) +
+<<<<<<< HEAD
   geom_text(aes(x = 1985, y = 120), label = "Age 25-29", color = "#1e7837") +
   geom_text(aes(x = 1985, y = 100), label = "Age 20-24", color = "#786d1e") +
   geom_text(aes(x = 1985, y = 80), label = "Age 30-34", color = "#27a39b") +
   geom_text(aes(x = 1985, y = 58), label = "Age 15-19", color = "#f8766d") +
   geom_text(aes(x = 1985, y = 33), label = "Age 35-39", color = "#5587cf") +
   geom_text(aes(x = 1985, y = 10), label = "Age 40-44", color = "#d45dce") +
+=======
+  geom_text(aes(x = 1985, y = 120), label = "Age 25-29", color = "#00ba38") +
+  geom_text(aes(x = 1985, y = 100), label = "Age 20-24", color = "#b79f00") +
+  geom_text(aes(x = 1985, y = 80), label = "Age 30-34", color = "#00bfc4") +
+  geom_text(aes(x = 1985, y = 58), label = "Age 15-19", color = "#f8766d") +
+  geom_text(aes(x = 1985, y = 33), label = "Age 35-39", color = "#619cff") +
+  geom_text(aes(x = 1985, y = 10), label = "Age 40-44", color = "#f564e3") +
+>>>>>>> ec788df (added minor tweaks from feedback)
   theme_classic() +
   theme(legend.position = "none")
 ```
@@ -202,17 +209,26 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
 #| message: false
 #| warning: false
 #| label: fig-2b
+
 # replicate figure 2d from the original paper
 fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Level)) +
   geom_line(size = 1) +
   labs(x = "Year", y = "Births per 1,000 women in \n relevant population subgroup", color = "Education Level") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
+<<<<<<< HEAD
   geom_text(aes(x = 1993, y = 112), label = "No high school degree", color = "#668a38", hjust = 0) +
   geom_text(aes(x = 1993, y = 82), label = "College graduate", color = "#f8766d", hjust = 0) +
   theme_classic() +
   geom_text(aes(x = 1993, y = 62), label = "High school graduate", color = "#00bfc4", hjust = 0) +
   geom_text(aes(x = 1993, y = 45), label = "Some college", color = "#b873c7", hjust = 0) +
+=======
+  geom_text(aes(x = 1993, y = 112), label = "No high school degree", color = "#7cae00", hjust = 0) +
+  geom_text(aes(x = 1993, y = 82), label = "College graduate", color = "#f8766d", hjust = 0) +
+  theme_classic() +
+  geom_text(aes(x = 1993, y = 62), label = "High school graduate", color = "#00bfc4", hjust = 0) +
+  geom_text(aes(x = 1993, y = 45), label = "Some college", color = "#c77cff", hjust = 0) +
+>>>>>>> ec788df (added minor tweaks from feedback)
   theme_classic() +
   theme(legend.position = "none")
 ```
@@ -231,8 +247,13 @@ merged_data_long %>% ggplot(aes(x = year, y = round(Birth_Rate, digits = 1), col
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
   geom_text(aes(x = 1993, y = 28), label = "First birth", color = "#f8766d", hjust = 0) +
   geom_text(aes(x = 1993, y = 23), label = "Second birth", color = "#00bfc4", hjust = 0) +
+<<<<<<< HEAD
   geom_text(aes(x = 1993, y = 12.5), label = "Third Birth", color = "#b873c7", hjust = 0) +
   geom_text(aes(x = 1993, y = 8.5), label = "Fourth+ birth", color = "#668a38", hjust = 0) +
+=======
+  geom_text(aes(x = 1993, y = 12.5), label = "Third Birth", color = "#c77cff", hjust = 0) +
+  geom_text(aes(x = 1993, y = 8.5), label = "Fourth+ birth", color = "#7cae00", hjust = 0) +
+>>>>>>> ec788df (added minor tweaks from feedback)
   theme_classic() +
   theme(legend.position = "none")
 ```
