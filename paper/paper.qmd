@@ -155,8 +155,9 @@ Although the data contains an abundance of information, we are mainly concerned 
 
 ## Data Processing
 
-## Data Visualization
+# Results
 
+@fig-1 showcases the trajectory of US birth rates spanning from 1980 to 2020, focusing on births per 1000 women aged 15 to 44. The peak occurred in 1990, reaching 70.9 births per 1000 women, closely followed by 2007 with 69.3 births per 1000 women. In contrast, 2020 marked the lowest point with only 55.8 births per 1000 women. From 1980 to 2007, the birth rate experienced moderate fluctuations, with a maximum variance of 7.3 births per 1000 women. However, following the year 2007, the birth rate seems to display a consistent a downward trend, declining by 13.5 births per 1000 women between 2007 and 2020.
 
 ```{r graph1, fig.cap="Trend in US Birth Rates from 1980 - 2020"}
 #| echo: false
@@ -172,6 +173,24 @@ fig_1_data %>% ggplot(aes(x = year, y = brate_all)) +
   scale_x_continuous(limits = c(1980,2020), breaks = seq(1980, 2020, by = 5)) +
   theme_classic()
 ```
+
+Examining the trends in birth rates by five-year age groups reveals intriguing patterns. 
+
+In the 15 - 19 years old age group, there has been a consistent decline in birth rates, punctuated by a brief period of growth from 1986 to 1991, peaking at 61.8 births per 1000 women in 1991 before steadily declining to its lowest recorded rate of 15.3 births per 1000 women in 2020.
+
+The 20-24 years old age group remained relatively stable from 1980 to 2007, reaching a peak of 116.5 births per 1000 women in 1990. However, it has experienced a consistent decline from 2007 onward, reaching a low of 62.8 births per 1000 women in 2020.
+
+Similarly, the 25-29 years old age group displayed stability until 2007, with the highest birth rate of 120.2 births per 1000 women recorded in 1990. Despite a gradual decline post-2007, it retained a relatively higher birth rate compared to younger age groups, hitting a low of 90.0 births per 1000 women in 2020.
+
+In contrast, the 30-34 years old age group witnessed a steady increase in birth rates over time, starting from 61.9 births per 1000 women in 1980 and peaking at 102.7 births per 1000 women in 2016.
+
+The 35-39 years old age group also experienced steady growth, with birth rates ranging from a low of 40.5 births per 1000 women in 1980 to a high of 52.8 births in 2019.
+
+The 40-44 years old age group displayed minimal change, remaining relatively steady over the years, with slight increases noted annually. The lowest birth rate was recorded in 1980 at 8.1 births per 1000 women, rising to 12.0 births per 1000 women in 2019.
+
+Analyzing the data in @fig-2a, the 25 - 29 years old age group consistently led in birth rates until being surpassed by the 30 - 34 years old age group in 2016. Conversely, the 40-44 years old age group consistently exhibited the lowest birth rates. However, with declining births in the 15-19 years old age group and a stable, increasing trend in the 40-44 years old age group, a shift in the age group with the lowest birth rate may soon occur for the first time in 40 years.
+
+Additionally, a noteworthy trend is the steady decline in birth rates among younger age groups from around 2007 onwards, while the older age groups have experienced the opposite trend.
 
 ```{r graph2a, fig.cap="Trends in Birth Rates by Five-year Age Group"}
 #| echo: false
@@ -195,6 +214,15 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
   theme(legend.position = "none")
 ```
 
+Unlike the figures discussed previously, @fig-2b examines US birth rate trends concerning the mother's level of education, focusing on the period from 1992 to 2019 and women aged 20 to 44.
+
+The subgroup with the highest birth rate consistently comprises mothers without a high school degree. Peaking in 2006 at 125.0 births per 1000 women, this subgroup witnessed its lowest birth rate of 89.0 in 1996. Notably, it also exhibited the most fluctuations, maintaining relative stability from 1992 to 2005 with a slight downturn from 1994 to 1997. Then, it experienced rapid growth in 2006, sustaining similar birth rates over the following three years before declining. From 2010 to 2019, the birth rate returned to levels observed from 1992 to 2005.
+
+Mothers who have graduated high school are the sub-group with the most stable birth rate. This sub-group experienced its highest birth rate in 2008, with 77.4 births per 1000 women. Conversely, the lowest birth rate of 68.0 births occurred in 1997.
+
+Similar to the previous sub-group, mothers with some college education have maintained a relatively stable birth rate, while showing a slightly positive trend over the years. The lowest birth rate can be attributed to the year 1994, with 49.4 births per 1000 women, and the highest birth rate was recorded in 2015, at 65.5 births. This is also the sub-group that has historically had the lowest birth average rate. 
+
+Lastly, the college graduates sub-group has also remained stable, showcasing a slight declining trend from 2016 onward. This sub-group's birth rate peaked in 2000 76.7 births per 1000 women. The lowest recorded birthrate was 59.4 in 2019.
 ```{r graph2b, fig.cap="Trends in Birth Rates by Mother's Level of Education (ages 20-44)"}
 #| echo: false
 #| message: false
