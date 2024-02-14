@@ -151,9 +151,15 @@ The datasets for this paper were acquired through the American Economic Associat
 All data collection and analysis was done using statistical tools and data visualization program R [@citeR] and Rstudio IDE [@citeRStudio] to help streamline the workflow. The analysis was done using the R program and the following supporting packages `tidyverse` [@citeTidyverse], `haven` [@citeHaven], `ggplot2` [@citeGgplot2], `here` [@citeHere], `ggthemes` [@citeGgthemes], and `dplyr` [@citeDplyr]. We will provide more comprehensive details about the data cleaning, and analysis in the following subsections.
 
 ## Variables of Interest
-Although the data contains an abundance of information, we are mainly concerned of US birth rates per year, the total female population, and various other factors including age, mother's level of education, and birth parity (number of children for a given women). As this paper focuses on birth rates in the US over the course of time, we have all the necessary and sufficient information required to proceed processing the data for our analysis.
+Although the data contains an abundance of information, we are mainly concerned of US birth rates per year, the total female population, and various other factors including age, mother's level of education, and birth parity. As this paper focuses on birth rates in the US over the course of time, we have all the necessary and sufficient information required to proceed processing the data for our analysis.
 
-## Data Processing
+The over arching variable in our measurements is birth rate. Birth rate is measured by number of births per 1000 women. Using this metric, we graph it in the context of the other variables included in our research we stated above. 
+
+Measuring birth rates by age allows us to split the data among different age groups of women. In doing so, we can observe how age affects the decision to have babies among women and how it might have changed over time. Another metric we will be comparing is the mother's level of education. Women from different education backgrounds would have impacts on fertility rates, and this measurement allows us to observe the differences between these education backgrounds. Lastly, we will be graphing birth parity, which is the measurement of how many children a given woman has. Birth parity would allows us to see the rates of which women have one child, two children and so on, and compare the frequencies of each to each other and over the course of the past few decades.
+
+## Data Measurement
+
+
 
 # Results
 
