@@ -47,12 +47,12 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
   labs(x = "Year", y = "Births per 1,000 women in \n relevant population subgroup", color = "Age Group") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5)) +
-  geom_text(aes(x = 1985, y = 120), label = "Age 25-29", color = "#1e7837") +
-  geom_text(aes(x = 1985, y = 100), label = "Age 20-24", color = "#786d1e") +
-  geom_text(aes(x = 1985, y = 80), label = "Age 30-34", color = "#27a39b") +
+  geom_text(aes(x = 1985, y = 120), label = "Age 25-29", color = "#00ba38") +
+  geom_text(aes(x = 1985, y = 100), label = "Age 20-24", color = "#b79f00") +
+  geom_text(aes(x = 1985, y = 80), label = "Age 30-34", color = "#00bfc4") +
   geom_text(aes(x = 1985, y = 58), label = "Age 15-19", color = "#f8766d") +
-  geom_text(aes(x = 1985, y = 33), label = "Age 35-39", color = "#5587cf") +
-  geom_text(aes(x = 1985, y = 10), label = "Age 40-44", color = "#d45dce") +
+  geom_text(aes(x = 1985, y = 33), label = "Age 35-39", color = "#619cff") +
+  geom_text(aes(x = 1985, y = 10), label = "Age 40-44", color = "#f564e3") +
   theme_classic() +
   theme(legend.position = "none")
 
@@ -74,11 +74,11 @@ fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Leve
   labs(x = "Year", y = "Births per 1,000 women in \n relevant population subgroup", color = "Education Level") +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 150, by = 20)) +
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
-  geom_text(aes(x = 1993, y = 112), label = "No high school degree", color = "#668a38", hjust = 0) +
+  geom_text(aes(x = 1993, y = 112), label = "No high school degree", color = "#7cae00", hjust = 0) +
   geom_text(aes(x = 1993, y = 82), label = "College graduate", color = "#f8766d", hjust = 0) +
   theme_classic() +
   geom_text(aes(x = 1993, y = 62), label = "High school graduate", color = "#00bfc4", hjust = 0) +
-  geom_text(aes(x = 1993, y = 45), label = "Some college", color = "#b873c7", hjust = 0) +
+  geom_text(aes(x = 1993, y = 45), label = "Some college", color = "#c77cff", hjust = 0) +
   theme_classic() +
   theme(legend.position = "none")
 
@@ -109,8 +109,8 @@ merged_data_long %>% ggplot(aes(x = year, y = round(Birth_Rate, digits = 1), col
   scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
   geom_text(aes(x = 1993, y = 28), label = "First birth", color = "#f8766d", hjust = 0) +
   geom_text(aes(x = 1993, y = 23), label = "Second birth", color = "#00bfc4", hjust = 0) +
-  geom_text(aes(x = 1993, y = 12.5), label = "Third Birth", color = "#b873c7", hjust = 0) +
-  geom_text(aes(x = 1993, y = 8.5), label = "Fourth+ birth", color = "#668a38", hjust = 0) +
+  geom_text(aes(x = 1993, y = 12.5), label = "Third Birth", color = "#c77cff", hjust = 0) +
+  geom_text(aes(x = 1993, y = 8.5), label = "Fourth+ birth", color = "#7cae00", hjust = 0) +
   theme_classic() +
   theme(legend.position = "none")
 
