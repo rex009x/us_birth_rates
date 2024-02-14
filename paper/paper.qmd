@@ -157,7 +157,7 @@ Although the data contains an abundance of information, we are mainly concerned 
 
 # Results
 
-@fig-1 showcases the trajectory of US birth rates spanning from 1980 to 2020, focusing on births per 1000 women aged 15 to 44. The peak occurred in 1990, reaching 70.9 births per 1000 women, closely followed by 2007 with 69.3 births per 1000 women. In contrast, 2020 marked the lowest point with only 55.8 births per 1000 women. From 1980 to 2007, the birth rate experienced moderate fluctuations, with a maximum variance of 7.3 births per 1000 women. However, following the year 2007, the birth rate seems to display a consistent a downward trend, declining by 13.5 births per 1000 women between 2007 and 2020.
+@fig-1 is the replication of Figure 1 from `The Puzzle of Falling US Birth Rates since the Great Recession' by @citeOriginalReplication, and showcases the trajectory of US birth rates spanning from 1980 to 2020, focusing on births per 1000 women aged 15 to 44. The peak occurred in 1990, reaching 70.9 births per 1000 women, closely followed by 2007 with 69.3 births per 1000 women. In contrast, 2020 marked the lowest point with only 55.8 births per 1000 women. From 1980 to 2007, the birth rate experienced moderate fluctuations, with a maximum variance of 7.3 births per 1000 women. However, following the year 2007, the birth rate seems to display a consistent a downward trend, declining by 13.5 births per 1000 women between 2007 and 2020.
 
 ```{r graph1, fig.cap="Trend in US Birth Rates from 1980 - 2020"}
 #| echo: false
@@ -174,7 +174,7 @@ fig_1_data %>% ggplot(aes(x = year, y = brate_all)) +
   theme_classic()
 ```
 
-Examining the trends in birth rates by five-year age groups reveals intriguing patterns. 
+@fig-2a is the replication of Figure 2 (a) from the original paper. Examining the trends in birth rates by five-year age groups reveals intriguing patterns. 
 
 In the 15 - 19 years old age group, there has been a consistent decline in birth rates, punctuated by a brief period of growth from 1986 to 1991, peaking at 61.8 births per 1000 women in 1991 before steadily declining to its lowest recorded rate of 15.3 births per 1000 women in 2020.
 
@@ -214,7 +214,7 @@ fig_2a_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Age_Group)) +
   theme(legend.position = "none")
 ```
 
-Unlike the figures discussed previously, @fig-2b examines US birth rate trends concerning the mother's level of education, focusing on the period from 1992 to 2019 and women aged 20 to 44.
+@fig-2b is the replication of Figure 2 (d) from the original paper, and examines US birth rate trends concerning the mother's level of education, focusing on the period from 1992 to 2019 and women aged 20 to 44.
 
 The subgroup with the highest birth rate consistently comprises mothers without a high school degree. Peaking in 2006 at 125.0 births per 1000 women, this subgroup witnessed its lowest birth rate of 89.0 in 1996. Notably, it also exhibited the most fluctuations, maintaining relative stability from 1992 to 2005 with a slight downturn from 1994 to 1997. Then, it experienced rapid growth in 2006, sustaining similar birth rates over the following three years before declining. From 2010 to 2019, the birth rate returned to levels observed from 1992 to 2005.
 
@@ -243,6 +243,12 @@ fig_2d_data_long %>% ggplot(aes(x = year, y = Birth_Rate, color = Education_Leve
   theme_classic() +
   theme(legend.position = "none")
 ```
+
+@fig-2c replicates figure 2 (f) from @citeOriginalReplication, and breaks down the trends in birth rates by parity.
+
+In this case, all subgroups representing first, second, third, and fourth or more births exhibit nearly identical patterns, maintaining a stable birth rate. However, there is a notable distinction: the fourth or more birth subgroup shows slight growth from around 1995 to 2019, while all other parity groups witness a decline in births per 1000 women from approximately 2007 to 2019.
+
+Consistently, the first birth subgroup boasts the highest number of births per 1000 women, followed by the second birth subgroup. Conversely, the fourth or more birth subgroup, despite displaying a positive trend from 1995 to 2000, consistently records the lowest number of births per 1000 women each year, followed by the third birth subgroup.
 
 ```{r graph2c, fig.cap="Trends in Birth Rates by Parity (ages 15-44)"}
 #| echo: false
