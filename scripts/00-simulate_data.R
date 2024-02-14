@@ -1,7 +1,7 @@
 #### Preamble ####
-# Purpose: Simulates the data required to reproduce graphs
+# Purpose: Simulates the data that will be required to reproduce the figures
 # Author: Aaron Xiaozhou Liu, Jimmy Luc, Maroosh Gillani
-# Date: 13 February 2024
+# Date: 14 February 2024
 # Contact: maroosh.gillani@mail.utoronto.ca, aaronxiaozhou.liu@mail.utoronto.ca, jimmy.luc@mail.utoronto.ca
 # License: MIT
 

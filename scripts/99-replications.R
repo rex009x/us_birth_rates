@@ -1,10 +1,10 @@
 #### Preamble ####
 # Purpose: Replication of figures in the original paper
 # Author: Aaron Xiaozhou Liu, Jimmy Luc, Maroosh Gillani
-# Date: 12 February 2024
+# Date: 14 February 2024
 # Contact: maroosh.gillani@mail.utoronto.ca, aaronxiaozhou.liu@mail.utoronto.ca, jimmy.luc@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: Must have data downloaded
+# Pre-requisites: Must have the data downloaded
 
 
 #### Workspace setup ####

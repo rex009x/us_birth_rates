@@ -1,11 +1,11 @@
 #### Preamble ####
-# Purpose: Tests data acquired from original AEA paper's replication package
+# Purpose: Tests data acquired from original AEA article replication package
 # Author: Aaron Xiaozhou Liu, Jimmy Luc, Maroosh Gillani
-# Date: 13 February 2024
+# Date: 14 February 2024
 # Contact: maroosh.gillani@mail.utoronto.ca, aaronxiaozhou.liu@mail.utoronto.ca, jimmy.luc@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: Must have data downloaded
-# Additional Information: these tests are applicable to the simulated data in 00-simulate_data.R
+# Pre-requisites: Must have the data downloaded
+# Additional Information: These tests are applicable to the simulated data in 00-simulate_data.R
 
 
 #### Workspace setup ####
