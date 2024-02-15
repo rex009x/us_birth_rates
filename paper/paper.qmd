@@ -157,9 +157,29 @@ The over arching variable in our measurements is birth rate. Birth rate is measu
 
 Measuring birth rates by age allows us to split the data among different age groups of women. In doing so, we can observe how age affects the decision to have babies among women and how it might have changed over time. Another metric we will be comparing is the mother's level of education. Women from different education backgrounds would have impacts on fertility rates, and this measurement allows us to observe the differences between these education backgrounds. Lastly, we will be graphing birth parity, which is the measurement of how many children a given woman has. Birth parity would allows us to see the rates of which women have one child, two children and so on, and compare the frequencies of each to each other and over the course of the past few decades.
 
-## Data Measurement
+## Data Processing
 
+The data we acquired through various sources and methods as previously mentioned presents a plethora of data points which we concern ourselves with. In order to produce our desired visualizations, we must first begin by process our data in preparation. While a portion of the data has already been processed by the authors of "The Puzzle of Falling US Birth Rates since the Great Recession" [@citeOriginalReplication], the remaining data sets are abundant. Data that can be so specific such as the population of women the age of 15 who live in Arkansas.
 
+With the consideration of our variables of interest in mind, we can proceed with the processing of the data. As birth rates are the main focal point of this paper, we are interested in the number of births that occur throughout the United States and the total population at any given time frame. The data including US Census Data and NCHS Vital Statistics Natality Birth Data provides this information by listing out the number of women and child births per state by year. Together, we are have the sufficient information required to proceed with the visualization for the number of births per 1000 women in the US.
+
+Next, we are interested to find the number of births per 1000 women in regards to the woman's age. As previously mentioned, we have the required data points concerning the population of women but now incorporating another variable of interest being the age. Proceeding, we intend to organize the data into age groups in order to observe the potential generational trends in birth rate. Fortunately, the data is already prepared containing the birth rates per year for each corresponding five-year age group [@citeOriginalReplication].
+
+Moving onto our next data point of interest, the mother's level of education requires the collection of data that records the population of women according to their levels of education. Utilizing the Current Population Survey (CPS) organized by the U.S. Census Bureau, the data is prepared containing the birth rates for each level of education by year respectively [@citeOriginalReplication].
+
+Considering births by "parity", referring to the number of children for a given women, we are interested in the data containing information regarding the number of first, second, third, and fourth+ births in the US. Combining NCHS Natality Microdata and CDC SEER population data, and simply filter for the data points of interest to receive the information required to generate our visualizations.
+
+Similarly to the data processing to acquire the birth rates per year by five-year age groups, gathering NCHS Vital Statistics birth data and CDC SEER population data we organize the data by mother's age and birth cohorts. Data processing and visualization of @fig-3 was completed with the aid of Kimlin Chin's replication of Kearney, Levine, and Pardue's (2020) article "The Puzzle of Falling US Birth Rates since the Great Recession".
+
+## Measurement
+
+The measurement of birth rates is nothing short of a difficult task upon consideration of all its nuances. What exactly defines a birth and what parameters determine how it is recorded? This variable of interest becomes slightly cloud when answering these questions. Do births that occur outside of a hospital count to the total number of births? The bounds of what a birth is becomes even blurrier when we consider miscarriages and related factors.
+
+Age being data of interest proves to be one of the most reliable and sound measurement throughout this analysis. Data collected through government initiated surveys regardless of whether or not it is mandatory, requires proper documented identification. While the exact date of birth remains confidential, the respondent's year of birth or age suffices for the purposes of this analysis.
+
+Measuring the level of education appears to be simple but is more inconsistent than initial thought. Data acquired through the CPS which is a monthly voluntary survey where U.S. households are selected [@citeCPS]. This is important to note as there may be traces of response bias and other forms of biases. As a result, it is difficult to filter the data from these bias entries and the generated visualizations may be skewed.
+
+The number of children for a given mother or "parity" is a rather straight-forward measurement. Although questions concerning whether legal adoption of a child contributes to this measurement, it is unclear to find an answer. A more concise explanation for the properties of this measurement would greatly benefit the readers experience.
 
 # Results
 
@@ -276,6 +296,12 @@ merged_data_long %>% ggplot(aes(x = year, y = round(Birth_Rate, digits = 1), col
   theme(legend.position = "none")
 ```
 
+Lastly, Figure 5 from the original paper is replicated in @fig-3, and showcases children ever born based on the mother's age and birth cohort. 
+
+All cohorts exhibit a consistent pattern of increasing children ever born as the mother ages. In particular, the first three spanning 1968-1972, 1973-1977, and 1978-1982 are nearly identical, especially from the ages of 15 to 26. After the mother reaches an age of 26 years old, there are only marginal differences among these cohorts.
+
+In contrast, while the latter three cohorts still generally follow the same trend of an increasing number of children ever born as the mother ages, it must be noted that the children ever born are steadily declining with each subsequent cohort. Thus, the most recent cohort of 1993-1997 records the lowest number of children ever born among all six cohorts. There is also a more significant variance between children ever born after the mother reaches an age of approximately 17 years old in the three most recent cohorts.
+
 ```{r graph3, fig.cap="Children Ever Born by Mother's Age and Birth Cohort"}
 #| echo: false
 #| message: false
@@ -302,16 +328,21 @@ nchs_cohort_data %>%
 
 The most likely explanation that acts as the root cause for the decline in US births is the shift in priorities across cohorts of women [@citeEconomicPolicy]. While there are many who can speculate and point fingers at specific events that occurred pre- or post-2007 such as the "inevitable" financial crisis more commonly known as "The Great Recession". It is evident that there exists a relationship between the current state of the economy and fertility rate, in other words, fertility is procyclical [@citeSageJournals]. This alone would suffice as the reasoning for such drop in fertility but instead the shifting priorities of young adults adopting a new and modern take on life is the overarching explanation to the downward trajectory of US birth rates.
 
-The social norm defines the boundaries or limits of how you should live your life. Walk the line of the social norm and you should expect to live the most ideal life, or so they say. The recent generations are an example of societies attempt at keeping pace with technological progression and redefining a social norm while challenging the bigger question at hand: "What is the meaning of life?" Should everyone have a similar goal in life? Does there exist a single task in the bucket list that every human shares? These are questions that young adults have been asking while being raised in a constantly evolving social landscape. Concerning parenthood, when men and women are ask the question "How does ones life  change when you have children", the most common answer is that your life becomes restricted now that you have to take on a new responsibility as a parent or idea that you have to giving up your freedom [@citePopulationCouncil]. While this goal of this paper is not to convince to not have children, instead it aims to convey the perspective of young adults who have the choice of whether or not they wish to become parents of the next generation.
+The social norm defines the boundaries or limits of how you should live your life. Walk the line of the social norm and you should expect to live the most ideal life, or so they say. The recent generations are an example of societies attempt at keeping pace with technological progression and redefining a social norm while challenging the bigger question at hand: "What is the meaning of life?" Should everyone have a similar goal in life? Does there exist a single task in the bucket list that every human shares? These are questions that young adults have been asking while being raised in a constantly evolving social landscape. Concerning parenthood, when men and women are ask the question "How does ones life change when you have children", the most common answer is that your life becomes restricted now that you have to take on a new responsibility as a parent or idea that you have to giving up your freedom [@citePopulationCouncil]. While this goal of this paper is not to convince to not have children, instead it aims to convey the perspective of young adults who have the choice of whether or not they wish to become parents of the next generation.
 
 DINK is an acronym for "dual income, no kids" and refers to couples who choose to not have children. While not being too unpopular of an ideology, is such decision considered selfish through the lens of the social norm? Nearly 48% of DINKs are spending the money that they are "saving" for not having any children towards travel. 33% say that they enjoy the financial freedom of not having children. With 32% of DINK couples stating that the cost of living today is too high to have children and 26% say they cannot financially support a child right now. A high 68% of DINK couples do not plan to ever have children and do not expect to regret such decision [@citeDINK]. With these statistics, can you really blame them? Regardless of whether or not these values become normalized into society, the declining birth rates in the US are a product of the shift in priorities for young adults.
 
-## Ethical Concerns and Biases
-
 ## Weaknesses
+
+While we were able to find very interesting trends and connections with our data, there are still a few weaknesses within our data. Some ethical concerns and biases are likely present as the data is based on a survey of women. One of these concerns is that it does not take into the account those who identify as LGBTQ+. The data we used in our analysis range from 1980 to 2020, but it wasn't until 2021 that the options to identify as LGBTQ+ was added to the census [@citeCensus]. Due to these options not being included, it could lead to these people classifying themselves differently. Since the data is based on those who identify as female, it's likely that there are those are pregnant to not be counted. 
+
+Another weakness within the data is from the education graph. In the graphs, the options are no high school degree, high school graduate, some college, and college graduate. The data could potentially be slightly skewed by the "some college" section, as this could include students, but also those who did not complete college and dropped out, in which case it would be more appropriate to group them in the "High school graduate" section. Another weakness with this data is the lack of any options beyond college graduate. People that may have completed masters or PHD programs are also included in this section, when they could be their own separate sections, or a new section that accounts for post graduate programs.
 
 ## Next Steps
 
+Some next steps that can be taken is the inclusion of those who identify in minority groups. This would include their inputs in the graphs, and instead of birth rate being measured by births per 1000 women, it would be birth per 1000 people to account for the minority groups. Other steps that can be taken is to consider other factors, such as ethnic backgrounds, seeing which demographics have a higher birth rates. Another variable of interest to be considered in the future is if people are immigrants, as people from those groups are potentially not documented in the data. Lastly, an improvement to the education graph as stated before in the weakness, combine the "Some college" group with "High school graduate" and splitting up "College graduate" to account for those who have completed programs, such as a masters, after college.
+
+\newpage
 
 # References
 
