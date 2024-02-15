@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Simulates the data that will be required to reproduce the figures
+# Purpose: Simulates and tests the data that will be required to reproduce the figures
 # Author: Aaron Xiaozhou Liu, Jimmy Luc, Maroosh Gillani
 # Date: 14 February 2024
 # Contact: maroosh.gillani@mail.utoronto.ca, aaronxiaozhou.liu@mail.utoronto.ca, jimmy.luc@mail.utoronto.ca
@@ -33,7 +33,7 @@ simulate_fig_2a <-
     brate_2529 = rnorm(fig_2a_years, mean = 110, sd = 5),
     brate_3034 = rnorm(fig_2a_years, mean = 90, sd = 10),
     brate_3539 = rnorm(fig_2a_years, mean = 40, sd = 10),
-    brate_4044 = rnorm(fig_2a_years, mean = 5, sd = 5)
+    brate_4044 = rnorm(fig_2a_years, mean = 5, sd = 2)
   )
 
 # simulate figure 2d data
@@ -66,3 +66,63 @@ simulate_fig_5 <-
     cohort2 = rep(1:6, each = 5, length.out = length(fig_5_motherage)),
     numbirth = rnorm(fig_5_motherage, mean = 700000, sd = 200000)
   )
+
+#### Test data ####
+## test data types##
+# methods used: https://stackoverflow.com/a/29591221
+all(sapply(simulate_fig_1$year, is.numeric))
+all(sapply(simulate_fig_1$brate_all, is.numeric))
+
+all(sapply(simulate_fig_2a$year, is.numeric))
+all(sapply(simulate_fig_2a$brate_1519, is.numeric))
+all(sapply(simulate_fig_2a$brate_2024, is.numeric))
+all(sapply(simulate_fig_2a$brate_2529, is.numeric))
+all(sapply(simulate_fig_2a$brate_3034, is.numeric))
+all(sapply(simulate_fig_2a$brate_3539, is.numeric))
+all(sapply(simulate_fig_2a$brate_4044, is.numeric))
+
+all(sapply(simulate_fig_2d$year, is.numeric))
+all(sapply(simulate_fig_2d$brate_hsdropout, is.numeric)) # is.numeric ignores NA values
+all(sapply(simulate_fig_2d$brate_hsgrad, is.numeric))
+all(sapply(simulate_fig_2d$brate_somecol, is.numeric))
+all(sapply(simulate_fig_2d$brate_colgrad, is.numeric))
+
+all(sapply(simulate_fig_2f$year, is.numeric))
+all(sapply(simulate_fig_2f$numbirth_firstbirth, is.numeric))
+all(sapply(simulate_fig_2f$numbirth_secondbirth, is.numeric))
+all(sapply(simulate_fig_2f$numbirth_thirdbirth, is.numeric))
+all(sapply(simulate_fig_2f$numbirth_fourthbirth, is.numeric))
+
+all(sapply(simulate_fig_5$mage, is.numeric))
+all(sapply(simulate_fig_5$cohort2, is.numeric))
+all(sapply(simulate_fig_5$numbirth, is.numeric))
+
+
+## test data values ##
+all(simulate_fig_1$year >= 1980 & simulate_fig_1$year <= 2020)
+all(simulate_fig_1$brate_all >= 0) # cannot have negative birth rate
+
+all(simulate_fig_2a$year >= 1980 & simulate_fig_2a$year <= 2020)
+all(simulate_fig_2a$brate_1519 >= 0) # cannot have negative birth rate
+all(simulate_fig_2a$brate_2024 >= 0)
+all(simulate_fig_2a$brate_2529 >= 0)
+all(simulate_fig_2a$brate_3034 >= 0)
+all(simulate_fig_2a$brate_3539 >= 0)
+all(simulate_fig_2a$brate_4044 >= 0)
+
+# data contains empty entries
+all(simulate_fig_2d$year >= 1980 & simulate_fig_2d$year <= 2020, na.rm = TRUE)
+all(simulate_fig_2d$brate_hsdropout >= 0, na.rm = TRUE) # cannot have negative birth rate
+all(simulate_fig_2d$brate_hsgrad >= 0, na.rm = TRUE)
+all(simulate_fig_2d$brate_somecol >= 0, na.rm = TRUE)
+all(simulate_fig_2d$brate_colgrad >= 0, na.rm = TRUE)
+
+all(simulate_fig_2f$year >= 1990 & simulate_fig_2f$year <= 2020)
+all(simulate_fig_2f$numbirth_firstbirth >= 0) # cannot have negative number of births
+all(simulate_fig_2f$numbirth_secondbirth >= 0)
+all(simulate_fig_2f$numbirth_thirdbirth >= 0)
+all(simulate_fig_2f$numbirth_fourthbirth >= 0)
+
+all(simulate_fig_5$mage >= 15 & simulate_fig_5$mage <= 44)
+all(simulate_fig_5$cohort2 >= 1 & simulate_fig_5$cohort2 <= 6)
+all(simulate_fig_5$numbirth >= 0) # cannot have negative number of births
