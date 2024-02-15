@@ -169,7 +169,7 @@ Moving onto our next data point of interest, the mother's level of education req
 
 Considering births by "parity", referring to the number of children for a given woman, we are interested in the data containing information regarding the number of first, second, third, and fourth+ births in the US. Combining NCHS Natality Microdata and CDC SEER population data, and simply filter for the data points of interest to receive the information required to generate our visualizations.
 
-Similarly to the data processing to acquire the birth rates per year by five-year age groups, gathering NCHS Vital Statistics birth data and CDC SEER population data we organize the data by mother's age and birth cohorts. Data processing and visualization of @fig-3 was completed with the aid of Kimlin Chin's replication of Kearney, Levine, and Pardue's (2020) article "The Puzzle of Falling US Birth Rates since the Great Recession".
+Similarly to the data processing to acquire the birth rates per year by five-year age groups, gathering NCHS Vital Statistics birth data and CDC SEER population data we organize the data by mother's age and birth cohorts. Data processing and visualization of @fig-3 was completed with the aid of Kimlin Chin's replication [@citeAnotherReplication] of Kearney, Levine, and Pardue's (2020) article "The Puzzle of Falling US Birth Rates since the Great Recession".
 
 ## Measurement
 
