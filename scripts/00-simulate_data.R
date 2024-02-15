@@ -12,7 +12,7 @@ library(tidyverse)
 # set seed for simulation
 set.seed(416)
 
-# simulate figure 1 data
+# simulate figure 1 data - Trend in US birth rates from 1980 to 2020
 # methods used: https://stackoverflow.com/a/68763213
 fig_1_years = 1980:2020
 fig_1_brate_mean = 65
@@ -23,7 +23,7 @@ simulate_fig_1 <-
     brate_all = rnorm(n = fig_1_years, mean = fig_1_brate_mean, sd = fig_1_brate_sd)
     )
 
-# simulate figure 2a data
+# simulate figure 2a data - Trend in birth rates by five-year age group
 fig_2a_years = 1980:2020
 simulate_fig_2a <-
   tibble(
@@ -36,7 +36,7 @@ simulate_fig_2a <-
     brate_4044 = rnorm(fig_2a_years, mean = 5, sd = 2)
   )
 
-# simulate figure 2d data
+# simulate figure 2d data - Trend in birth rate by mother's level of education
 fig_2d_years = 1990:2020
 simulate_fig_2d <-
   tibble(
@@ -47,7 +47,7 @@ simulate_fig_2d <-
     brate_colgrad = rnorm(fig_2d_years, mean = 70, sd = 5)
   )
 
-# simulate figure 2f data
+# simulate figure 2f data - Trend in birth rates by parity (number of children for a given woman)
 fig_2f_years = 1990:2020
 simulate_fig_2f <-
   tibble(
@@ -58,7 +58,7 @@ simulate_fig_2f <-
     numbirth_fourthbirth = rnorm(fig_2f_years, mean = 9, sd = 0.5)
   )
 
-# simulate figure 5 data
+# simulate figure 5 data - Number of children ever born by mother's age and birth cohort
 fig_5_motherage = 15:44
 simulate_fig_5 <-
   tibble(
